@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class GerarCPFTest extends BaseTest {
 
-    private HomePage homePage = new HomePage();
+    HomePage homePage = new HomePage();
 
     @Test
     public void gerarCPF(){
@@ -17,13 +17,11 @@ public class GerarCPFTest extends BaseTest {
         String cpfGerado = null;
 
         do{
-            System.out.println(cpfGerado);
             homePage.clicarGerarCPF();
             cpfGerado = homePage.obterNumeroCPF();
         }while(!cpfGerado.startsWith("7"));
 
         Assert.assertTrue(cpfGerado.startsWith("7"));
-
     }
 
 }
